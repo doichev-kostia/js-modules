@@ -1,0 +1,17 @@
+{
+  "name": "js-modules",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@doichev-kostia/config": "^0.0.1",
+    "@types/node": "20",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "node-cache": "^5.1.2",
+    "yaml": "^2.4.1"
+  }
+}
