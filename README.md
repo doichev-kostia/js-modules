@@ -6,7 +6,9 @@ operations (functions). It's inspired by Go and Rust module systems.
 When using classes, it's common to have a mess of data, state and functions all together. With time it's hard to maintain.
 The solution I see is to separate data and functions. This way it's easier to reason about the code and to maintain it.
 
-Due to the lack of private properties in JS. I'm using symbols to simulate them. You can see examples of that in Fastify and Undici.
+Due to the lack of private properties in JS. I'm using symbols to simulate them. You can see examples of that in [Fastify](https://github.com/fastify/fastify) and [Undici](https://github.com/nodejs/undici).
+
+The main module is [storage.ts](/cmd/storage/storage.ts) and you can see the usage in [storage.test.ts](/cmd/storage/storage.test.ts).
 
 You can also notice that I'm associating the method with a struct.
 

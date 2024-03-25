@@ -1,17 +1,11 @@
 import path from "node:path";
 import * as fs from "node:fs";
-import assert from "node:assert";
 
 import YAML from "yaml";
 import NodeCache from "node-cache";
 
 import { seconds } from "../time.js";
 import { associateMethod } from "../util.js";
-
-const keys = {
-	cache: Symbol("storage:cache"),
-	filepath: Symbol("storage:filepath")
-} as const;
 
 type Storage = {
 	pathname: string;
@@ -24,6 +18,11 @@ type Options = {
 	basename?: string
 }
 
+const keys = {
+	cache: Symbol("storage:cache"),
+	filepath: Symbol("storage:filepath")
+} as const;
+
 const DEFAULT_BASENAME = "storage";
 
 export function createStorage(options: Options) {
@@ -35,7 +34,6 @@ export function createStorage(options: Options) {
 	if (!fs.existsSync(filepath)) {
 		fs.writeFileSync(filepath, YAML.stringify({}));
 	}
-
 
 	const storage: Storage = {
 		pathname,
